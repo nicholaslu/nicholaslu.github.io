@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://nicholaslu.github.io').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="向世界问好有了解释器，我们就开始来写第一行代码了。在学习编程时，有一个有趣的传统，那就是人们在学习一门新语言时，所学习的第一个程序，都是输出一行内容为Hello, world!的话（严格来说，称为字符串）。 在Python中，使用print()函数来进行输出文字。在终端中输入python进入Python环境，通过输入代码print(&amp;quot;Hello world!&amp;quot;)来输出这段话。之">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python的奇妙马戏团 第二篇">
+<meta property="og:url" content="https://nicholaslu.github.io/2020/01/10/Python的奇妙马戏团-其二/index.html">
+<meta property="og:site_name" content="TypeWorld">
+<meta property="og:description" content="向世界问好有了解释器，我们就开始来写第一行代码了。在学习编程时，有一个有趣的传统，那就是人们在学习一门新语言时，所学习的第一个程序，都是输出一行内容为Hello, world!的话（严格来说，称为字符串）。 在Python中，使用print()函数来进行输出文字。在终端中输入python进入Python环境，通过输入代码print(&amp;quot;Hello world!&amp;quot;)来输出这段话。之">
+<meta property="og:locale" content="ja">
+<meta property="og:image" content="https://dppfgq.bn.files.1drv.com/y4mN6ezbDTKHBxvsVAc9w1UYKo6IiHyEuJdx3IPgbGBASS1zYfuJ9PvCWrobp1UItKdCTZcDnyksW_SEYqIeXFHDnO-uAulDpyPTDMhTa-daxPth9OmbF3sdkyEhfuWUzGQQLB8qikgcytYPlB2Th5WD9QlAUHzYNzO5afS_VooxvZJVRwxMaChSAUaTWWiGpGrxVUffIjRM32OO66AfWYdvA?width=1727&height=1303&cropmode=none">
+<meta property="og:image" content="https://dppcgq.bn.files.1drv.com/y4mD54dr9SNs03FxtATf_Q5ggROCUp6CP25HA136aWgBPsFkj5QaspI_4Q1G81G47xWlFTpxujZ-gbpx7aTwOiaxhxifNeDAQGCzWCTUUyaoWrglDGGO2nFtzCVEzf6s2ISGtMy9v4HIH7k5x5fvfWOHAvol7BUOAVjWiOhPrgESHN5YCg0xi1wq6R6hj8aAYYNzOoiNWQSI5aZ08JZc0RXhg?width=1727&height=35&cropmode=none">
+<meta property="og:image" content="https://dppdgq.bn.files.1drv.com/y4mM_77NU9Tx_we9B0j1QFFcdXEtVsBHoMOfrQ__cjBbya_PkkvNaGsYUXkzYgle-bfFiT6gbSEFZp9QnMde6JzIhZrGr_ix13DTjvObTN2mqhFK3_3hX5BH4dz41uFFHWmxOKAyHoeAnpI8c8St8My0bY3ziSNrCAIMKxwOpdSa9sncZS6xJLLm8PYt7FW2aAxtTpltH_I1JlxVqiX2kToqA?width=463&height=813&cropmode=none">
+<meta property="og:updated_time" content="2020-01-10T14:09:03.868Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python的奇妙马戏团 第二篇">
+<meta name="twitter:description" content="向世界问好有了解释器，我们就开始来写第一行代码了。在学习编程时，有一个有趣的传统，那就是人们在学习一门新语言时，所学习的第一个程序，都是输出一行内容为Hello, world!的话（严格来说，称为字符串）。 在Python中，使用print()函数来进行输出文字。在终端中输入python进入Python环境，通过输入代码print(&amp;quot;Hello world!&amp;quot;)来输出这段话。之">
+<meta name="twitter:image" content="https://dppfgq.bn.files.1drv.com/y4mN6ezbDTKHBxvsVAc9w1UYKo6IiHyEuJdx3IPgbGBASS1zYfuJ9PvCWrobp1UItKdCTZcDnyksW_SEYqIeXFHDnO-uAulDpyPTDMhTa-daxPth9OmbF3sdkyEhfuWUzGQQLB8qikgcytYPlB2Th5WD9QlAUHzYNzO5afS_VooxvZJVRwxMaChSAUaTWWiGpGrxVUffIjRM32OO66AfWYdvA?width=1727&height=1303&cropmode=none">
+
+<link rel="canonical" href="https://nicholaslu.github.io/2020/01/10/Python的奇妙马戏团-其二/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>Python的奇妙马戏团 第二篇 | TypeWorld</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">TypeWorld</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="ナビゲーションバーの切り替え">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>ホーム</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>アーカイブ</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://nicholaslu.github.io/2020/01/10/Python的奇妙马戏团-其二/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Nicholas Lu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TypeWorld">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Python的奇妙马戏团 第二篇
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+              
+
+              <time title="作成日：2020-01-10 01:15:59 / 修正日：23:09:03" itemprop="dateCreated datePublished" datetime="2020-01-10T01:15:59+09:00">2020-01-10</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="向世界问好"><a href="#向世界问好" class="headerlink" title="向世界问好"></a>向世界问好</h1><p>有了解释器，我们就开始来写第一行代码了。在学习编程时，有一个有趣的传统，那就是人们在学习一门新语言时，所学习的第一个程序，都是输出一行内容为<em>Hello, world!</em>的话<del>（严格来说，称为字符串）</del>。</p>
+<p>在Python中，使用print()函数来进行输出文字。在终端中输入python进入Python环境，通过输入代码print(&quot;Hello world!&quot;)来输出这段话。之后Python会如实输出引号中包含的这段文字。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Microsoft Windows [Version 10.0.18363.535]</span><br><span class="line">(c) 2019 Microsoft Corporation. All rights reserved.</span><br><span class="line"></span><br><span class="line">C:\Users\nicho&gt;python</span><br><span class="line">Python 3.7.3 (v3.7.3:ef4ec6ed12, Mar 25 2019, 22:22:05) [MSC v.1916 64 bit (AMD64)] on win32</span><br><span class="line">Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.</span><br><span class="line">&gt;&gt;&gt; print(&quot;Hello world!&quot;)</span><br><span class="line">Hello world!</span><br></pre></td></tr></table></figure>
+<p>这就代表这行代码正确运行了。</p>
+<p>通过运行exit()来退出Python环境，回到终端。然后，这个终端就可以安全关闭了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">exit()</span><br><span class="line"></span><br><span class="line">C:\Users\nicho&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="Visual-Studio-Code的安装"><a href="#Visual-Studio-Code的安装" class="headerlink" title="Visual Studio Code的安装"></a>Visual Studio Code的安装</h1><p>值得注意的是，刚才并没有机会把写出的代码保存下来。虽然说Python<del>的解释器</del>安装好后，即使是记事本都可以用来编程，但是为了使用的方便，还是安装一个代码编辑器。代码编辑器即编辑代码的软件<del>，但一般不包含解释器、编译器等，通常包含这些的称为IDE。</del>此处使用现在比较流行的、微软出品的<a href="https://code.visualstudio.com/" target="_blank" rel="noopener">Visual Studio Code</a>。下载并安装对应自己操作系统的Stable版本。</p>
+<p>Visual Studio长这样</p>
+<p><img src="https://dppfgq.bn.files.1drv.com/y4mN6ezbDTKHBxvsVAc9w1UYKo6IiHyEuJdx3IPgbGBASS1zYfuJ9PvCWrobp1UItKdCTZcDnyksW_SEYqIeXFHDnO-uAulDpyPTDMhTa-daxPth9OmbF3sdkyEhfuWUzGQQLB8qikgcytYPlB2Th5WD9QlAUHzYNzO5afS_VooxvZJVRwxMaChSAUaTWWiGpGrxVUffIjRM32OO66AfWYdvA?width=1727&amp;height=1303&amp;cropmode=none" alt="VSCode on Windows 10"></p>
+<p>Visual Studio Code比较特色的地方是可以安装插件。因为纯粹的编辑器是不带有很多功能的，通过安装插件的方式，可以方便的定制需要的功能。这里搜索并安装名为Python的插件，来完善对Python的支持。点击Install安装。</p>
+<p>install python extension</p>
+<p>在安装完成后，就可以开始编写代码了呢。File -&gt; New File， 或者Ctrl+N来新建一个文件，既然是代码编辑器，此处的文件一般就是代码了。通过在这个编辑器，可以做到和刚才终端中一样的事情。虽然什么都没写，先还是把这个文件保存下来，File -&gt; Save， 或者Ctrl+S来保存文件，文件名一般仅使用字母、数字和下划线的组合，扩展名使用.py，如hello_world.py。通过这个.py的扩展名，大家（指编辑器，解释器和人类等）都知道这个文件是段Python代码了。此时Visual Studio Code的右下角会显示你现在编写的代码类型</p>
+<p><img src="https://dppcgq.bn.files.1drv.com/y4mD54dr9SNs03FxtATf_Q5ggROCUp6CP25HA136aWgBPsFkj5QaspI_4Q1G81G47xWlFTpxujZ-gbpx7aTwOiaxhxifNeDAQGCzWCTUUyaoWrglDGGO2nFtzCVEzf6s2ISGtMy9v4HIH7k5x5fvfWOHAvol7BUOAVjWiOhPrgESHN5YCg0xi1wq6R6hj8aAYYNzOoiNWQSI5aZ08JZc0RXhg?width=1727&amp;height=35&amp;cropmode=none" alt="bottom bar of VSCode"></p>
+<p>值得注意的是，左下角还显示了Visual Studio Code所检测到的Python版本（Python 3.7.3 64-bit）。在安装了多个Python版本的情况下，可以点击它来切换。</p>
+<h1 id="Try-with-Code"><a href="#Try-with-Code" class="headerlink" title="Try with Code"></a>Try with Code</h1><p>使用Visual Studio Code，以下简称Code，在刚刚建立的文件中写入</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"Hello world!"</span>)</span><br></pre></td></tr></table></figure>
+<p>保存后，点击右上角绿色三角形的运行键，运行这段代码。记住，不保存代码的话，自从上次保存以来的更改是不会被写入到文件中去的，所以在运行代码之前应当有保存一次代码的习惯。在运行之后，可以看到Code的底端弹出了如下的输出’</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">PS C:\Users\nicho&gt; &amp; C:/Users/nicho/AppData/Local/Programs/Python/Python37/python.exe c:/Users/nicho/Documents/temp/hello_world.py</span><br><span class="line">Helo world!</span><br><span class="line">PS C:\Users\nicho&gt;</span><br></pre></td></tr></table></figure>
+<p>也就是说，得到了和终端中一致的结果。</p>
+<p>至此，对于编辑器Visual Studio Code的大致了解就完成了，也可以自己尝试探索Code所带有的其他强大功能，甚至尝试其他的扩展。</p>
+<h1 id="附注"><a href="#附注" class="headerlink" title="附注"></a>附注</h1><p>本文的快捷键以Windows下的为主，要想知道Linux或者macOS下的快捷键，可以查看Code的菜单。右侧一栏所显示的即是快捷键，记忆几个常用的快捷键对工作效率会有极大的提升。</p>
+<p><img src="https://dppdgq.bn.files.1drv.com/y4mM_77NU9Tx_we9B0j1QFFcdXEtVsBHoMOfrQ__cjBbya_PkkvNaGsYUXkzYgle-bfFiT6gbSEFZp9QnMde6JzIhZrGr_ix13DTjvObTN2mqhFK3_3hX5BH4dz41uFFHWmxOKAyHoeAnpI8c8St8My0bY3ziSNrCAIMKxwOpdSa9sncZS6xJLLm8PYt7FW2aAxtTpltH_I1JlxVqiX2kToqA?width=463&amp;height=813&amp;cropmode=none" alt="Menu of VSCode" style="zoom:50%;"></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Python/" rel="tag"># Python</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/01/09/Python的奇妙马戏团/" rel="prev" title="Python的奇妙马戏团">
+      <i class="fa fa-chevron-left"></i> Python的奇妙马戏团
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/01/10/旅行商问题的暴力解法/" rel="next" title="旅行商问题的暴力解法">
+      旅行商问题的暴力解法 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          見出し
+        </li>
+        <li class="sidebar-nav-overview">
+          概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#向世界问好"><span class="nav-number">1.</span> <span class="nav-text">向世界问好</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Visual-Studio-Code的安装"><span class="nav-number">2.</span> <span class="nav-text">Visual Studio Code的安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Try-with-Code"><span class="nav-number">3.</span> <span class="nav-text">Try with Code</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#附注"><span class="nav-number">4.</span> <span class="nav-text">附注</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Nicholas Lu"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Nicholas Lu</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-name">ポスト</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">タグ</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/nicholaslu" title="GitHub → https://github.com/nicholaslu" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → /atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Nicholas Lu</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">テーマ – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

@@ -165,6 +165,144 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://nicholaslu.github.io/2020/01/10/旅行商问题的暴力解法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Nicholas Lu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TypeWorld">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/10/旅行商问题的暴力解法/" class="post-title-link" itemprop="url">旅行商问题的暴力解法</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+              
+
+              <time title="作成日：2020-01-10 01:17:55 / 修正日：01:19:14" itemprop="dateCreated datePublished" datetime="2020-01-10T01:17:55+09:00">2020-01-10</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://nicholaslu.github.io/2020/01/10/Python的奇妙马戏团-其二/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Nicholas Lu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TypeWorld">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/10/Python的奇妙马戏团-其二/" class="post-title-link" itemprop="url">Python的奇妙马戏团 第二篇</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+              
+
+              <time title="作成日：2020-01-10 01:15:59 / 修正日：23:09:03" itemprop="dateCreated datePublished" datetime="2020-01-10T01:15:59+09:00">2020-01-10</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="向世界问好"><a href="#向世界问好" class="headerlink" title="向世界问好"></a>向世界问好</h1><p>有了解释器，我们就开始来写第一行代码了。在学习编程时，有一个有趣的传统，那就是人们在学习一门新语言时，所学习的第一个程序，都是输出一行内容为<em>Hello, world!</em>的话<del>（严格来说，称为字符串）</del>。</p>
+<p>在Python中，使用print()函数来进行输出文字。在终端中输入python进入Python环境，通过输入代码print(&quot;Hello world!&quot;)来输出这段话。之后Python会如实输出引号中包含的这段文字。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Microsoft Windows [Version 10.0.18363.535]</span><br><span class="line">(c) 2019 Microsoft Corporation. All rights reserved.</span><br><span class="line"></span><br><span class="line">C:\Users\nicho&gt;python</span><br><span class="line">Python 3.7.3 (v3.7.3:ef4ec6ed12, Mar 25 2019, 22:22:05) [MSC v.1916 64 bit (AMD64)] on win32</span><br><span class="line">Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.</span><br><span class="line">&gt;&gt;&gt; print(&quot;Hello world!&quot;)</span><br><span class="line">Hello world!</span><br></pre></td></tr></table></figure>
+<p>这就代表这行代码正确运行了。</p>
+<p>通过运行exit()来退出Python环境，回到终端。然后，这个终端就可以安全关闭了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">exit()</span><br><span class="line"></span><br><span class="line">C:\Users\nicho&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="Visual-Studio-Code的安装"><a href="#Visual-Studio-Code的安装" class="headerlink" title="Visual Studio Code的安装"></a>Visual Studio Code的安装</h1><p>值得注意的是，刚才并没有机会把写出的代码保存下来。虽然说Python<del>的解释器</del>安装好后，即使是记事本都可以用来编程，但是为了使用的方便，还是安装一个代码编辑器。代码编辑器即编辑代码的软件<del>，但一般不包含解释器、编译器等，通常包含这些的称为IDE。</del>此处使用现在比较流行的、微软出品的<a href="https://code.visualstudio.com/" target="_blank" rel="noopener">Visual Studio Code</a>。下载并安装对应自己操作系统的Stable版本。</p>
+<p>Visual Studio长这样</p>
+<p><img src="https://dppfgq.bn.files.1drv.com/y4mN6ezbDTKHBxvsVAc9w1UYKo6IiHyEuJdx3IPgbGBASS1zYfuJ9PvCWrobp1UItKdCTZcDnyksW_SEYqIeXFHDnO-uAulDpyPTDMhTa-daxPth9OmbF3sdkyEhfuWUzGQQLB8qikgcytYPlB2Th5WD9QlAUHzYNzO5afS_VooxvZJVRwxMaChSAUaTWWiGpGrxVUffIjRM32OO66AfWYdvA?width=1727&amp;height=1303&amp;cropmode=none" alt="VSCode on Windows 10"></p>
+<p>Visual Studio Code比较特色的地方是可以安装插件。因为纯粹的编辑器是不带有很多功能的，通过安装插件的方式，可以方便的定制需要的功能。这里搜索并安装名为Python的插件，来完善对Python的支持。点击Install安装。</p>
+<p>install python extension</p>
+<p>在安装完成后，就可以开始编写代码了呢。File -&gt; New File， 或者Ctrl+N来新建一个文件，既然是代码编辑器，此处的文件一般就是代码了。通过在这个编辑器，可以做到和刚才终端中一样的事情。虽然什么都没写，先还是把这个文件保存下来，File -&gt; Save， 或者Ctrl+S来保存文件，文件名一般仅使用字母、数字和下划线的组合，扩展名使用.py，如hello_world.py。通过这个.py的扩展名，大家（指编辑器，解释器和人类等）都知道这个文件是段Python代码了。此时Visual Studio Code的右下角会显示你现在编写的代码类型</p>
+<p><img src="https://dppcgq.bn.files.1drv.com/y4mD54dr9SNs03FxtATf_Q5ggROCUp6CP25HA136aWgBPsFkj5QaspI_4Q1G81G47xWlFTpxujZ-gbpx7aTwOiaxhxifNeDAQGCzWCTUUyaoWrglDGGO2nFtzCVEzf6s2ISGtMy9v4HIH7k5x5fvfWOHAvol7BUOAVjWiOhPrgESHN5YCg0xi1wq6R6hj8aAYYNzOoiNWQSI5aZ08JZc0RXhg?width=1727&amp;height=35&amp;cropmode=none" alt="bottom bar of VSCode"></p>
+<p>值得注意的是，左下角还显示了Visual Studio Code所检测到的Python版本（Python 3.7.3 64-bit）。在安装了多个Python版本的情况下，可以点击它来切换。</p>
+<h1 id="Try-with-Code"><a href="#Try-with-Code" class="headerlink" title="Try with Code"></a>Try with Code</h1><p>使用Visual Studio Code，以下简称Code，在刚刚建立的文件中写入</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"Hello world!"</span>)</span><br></pre></td></tr></table></figure>
+<p>保存后，点击右上角绿色三角形的运行键，运行这段代码。记住，不保存代码的话，自从上次保存以来的更改是不会被写入到文件中去的，所以在运行代码之前应当有保存一次代码的习惯。在运行之后，可以看到Code的底端弹出了如下的输出’</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">PS C:\Users\nicho&gt; &amp; C:/Users/nicho/AppData/Local/Programs/Python/Python37/python.exe c:/Users/nicho/Documents/temp/hello_world.py</span><br><span class="line">Helo world!</span><br><span class="line">PS C:\Users\nicho&gt;</span><br></pre></td></tr></table></figure>
+<p>也就是说，得到了和终端中一致的结果。</p>
+<p>至此，对于编辑器Visual Studio Code的大致了解就完成了，也可以自己尝试探索Code所带有的其他强大功能，甚至尝试其他的扩展。</p>
+<h1 id="附注"><a href="#附注" class="headerlink" title="附注"></a>附注</h1><p>本文的快捷键以Windows下的为主，要想知道Linux或者macOS下的快捷键，可以查看Code的菜单。右侧一栏所显示的即是快捷键，记忆几个常用的快捷键对工作效率会有极大的提升。</p>
+<p><img src="https://dppdgq.bn.files.1drv.com/y4mM_77NU9Tx_we9B0j1QFFcdXEtVsBHoMOfrQ__cjBbya_PkkvNaGsYUXkzYgle-bfFiT6gbSEFZp9QnMde6JzIhZrGr_ix13DTjvObTN2mqhFK3_3hX5BH4dz41uFFHWmxOKAyHoeAnpI8c8St8My0bY3ziSNrCAIMKxwOpdSa9sncZS6xJLLm8PYt7FW2aAxtTpltH_I1JlxVqiX2kToqA?width=463&amp;height=813&amp;cropmode=none" alt="Menu of VSCode" style="zoom:50%;"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
     <link itemprop="mainEntityOfPage" href="https://nicholaslu.github.io/2020/01/09/Python的奇妙马戏团/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -802,224 +940,12 @@ Consider buy CPU and motherboard separately on 12.12 which will save $1470 - 139
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
-    <link itemprop="mainEntityOfPage" href="https://nicholaslu.github.io/2017/10/23/Asset/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Nicholas Lu">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="TypeWorld">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2017/10/23/Asset/" class="post-title-link" itemprop="url">Asset</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">投稿日</span>
-
-              <time title="作成日：2017-10-23 13:02:55" itemprop="dateCreated datePublished" datetime="2017-10-23T13:02:55+09:00">2017-10-23</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">編集日</span>
-                <time title="修正日：2018-01-29 03:44:00" itemprop="dateModified" datetime="2018-01-29T03:44:00+09:00">2018-01-29</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="39-Asset-39-是什么"><a href="#39-Asset-39-是什么" class="headerlink" title="&#39;Asset&#39;是什么"></a>&#39;Asset&#39;是什么</h1><p>An asset is a resource with economic value that an individual, corporation or country owns or controls with the expectation that it will provide future benefit. Assets are reported on a company&#39;s balance sheet, and they are bought or created to increase the value of a firm or benefit the firm&#39;s operations. An asset can be thought of as something that in the future can generate cash flow, reduce expenses, improve sales, regardless of whether it&#39;s a company&#39;s manufacturing equipment or a patent on a particular technology.</p>
-<p>Asset(资产)是指个人、公司或国家所拥有或控制的具有经济价值的、期望提供未来收益的资源。资产会被上报在公司的的资产负债表中，它们被购买或创造以增长企业的价值或使企业的业务获利。资产被看作在未来创造现金流、减少开支、提升销售额的东西，不管它是不是公司的生产设备或是特定技术的专利。</p>
-<h1 id="分解-39-Asset-39"><a href="#分解-39-Asset-39" class="headerlink" title="分解 &#39;Asset&#39;"></a><strong>分解</strong> &#39;Asset&#39;</h1><p>An asset represents a present economic resource of a company to which it has a right or other type of access that other individuals or firms do not have. A right or other access is legally enforceable, which means that a company can use economic resource at its discretion, and its use can be precluded or limited by an owner. For an asset to be present, a company must possess a right to it as of the date of the financial statements. An economic resource is something that is scarce and has the ability to produce economic benefit by generating cash inflows or decreasing cash outflows.
-Assets can be broadly categorized into short-term (or current) assets, fixed assets, financial investments and intangible assets. Assets are recorded on companies&#39; balance sheets based on the concept of historical cost, which represents the original cost of the asset, adjusted for any improvements or aging. Historical cost is also called the book value.</p>
-<p>资产代表着一个公司现在的经济资源，这个公司有对它的权利或其他类型的使用方式，但其他的个人或公司是没有的。这个权利或其他的使用方式是有法律效力的，也就意味着一个公司可以自由决定如何使用经济资源，经济资源的使用可以被业主阻止或限制。对于存在的资产，在财务报表的日期内，公司必须要拥有它的权利。经济资源是一种稀缺的东西，它有着通过产生现金流入或这减少现金流出来制造经济价值的能力。
-资产可以大致分为短期（或者说流动）资产、固定资产、金融投资和无形资产。资产以历史成本的概念记录在公司的资产负债表上（历史成本反映了资产的原始成本），并根据改善或者老化进行调整。历史成本也被称作账面价值。</p>
-<h1 id="流动资产"><a href="#流动资产" class="headerlink" title="流动资产"></a>流动资产</h1><p>Current assets are short-term economic resources that are expected to be converted into cash within one year. Current assets include cash and cash equivalents, accounts receivable, inventory, and various prepaid expenses. While cash is easy to value, accountants periodically reassess the recoverability of inventory and accounts receivable. If there is persuasive evidence that collectability of accounts receivable is impaired or that inventory becomes obsolete, companies may write off these assets.</p>
-<h1 id="Fixed-Assets"><a href="#Fixed-Assets" class="headerlink" title="Fixed Assets"></a>Fixed Assets</h1><p>Fixed assets are long-term resources, such as plants, equipment and buildings. An adjustment for aging of fixed assets is made based on periodic charges called depreciation, which may or may not reflect the loss of earning power of a fixed asset. Generally accepted accounting principles (GAAP) allow depreciation under two broad methods: the straight-line method assumes that a fixed asset loses its value in proportion to its useful life, while the accelerated method assumes that the asset loses its value faster in its first years of use.</p>
-<h1 id="Financial-Assets"><a href="#Financial-Assets" class="headerlink" title="Financial Assets"></a>Financial Assets</h1><p>Financial assets represent investments in the assets and securities of other institutions. Financial assets include stocks, sovereign and corporate bonds, preferred equity, and other hybrid securities. Financial assets are valued depending on how the investment is categorized and the motive behind it.</p>
-<h1 id="Intangible-Assets"><a href="#Intangible-Assets" class="headerlink" title="Intangible Assets"></a>Intangible Assets</h1><p>Intangible assets are economic resources that have no physical presence. They include patents, trademarks, copyrights and goodwill. Accounting for intangible assets differs depending on the type of asset, and they can be either amortized or tested for impairment each year.</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
-    <link itemprop="mainEntityOfPage" href="https://nicholaslu.github.io/2017/10/23/Balance-sheet/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Nicholas Lu">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="TypeWorld">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2017/10/23/Balance-sheet/" class="post-title-link" itemprop="url">Balance sheet</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">投稿日</span>
-
-              <time title="作成日：2017-10-23 12:39:08" itemprop="dateCreated datePublished" datetime="2017-10-23T12:39:08+09:00">2017-10-23</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">編集日</span>
-                <time title="修正日：2018-01-25 15:27:00" itemprop="dateModified" datetime="2018-01-25T15:27:00+09:00">2018-01-25</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p><strong>Balance sheet</strong>又可称之为<strong>Statement of Financial Position</strong>，它是一种财务报表。中文称之为<strong>资产负债表</strong>或者<strong>财务状况表</strong>。它是企业常用的几种财务报表之一。</p>
-<h1 id="相关概念"><a href="#相关概念" class="headerlink" title="相关概念"></a>相关概念</h1><p><strong>Balance sheet</strong>反映了<strong>Asset</strong>、<strong>Liability</strong>和<strong>Shareholders&#39; equity</strong>，因此首先需理解：</p>
-<ol>
-<li><a href="http://nicholaslu.github.io/2017/10/23/Asset/">Asset</a> - 资产</li>
-<li><a href="http://nicholaslu.github.io/2017/10/23/Liability/">Liability</a> - 负债</li>
-<li><a href="http://nicholaslu.github.io/2017/10/23/Shareholders-equity/">Shareholders&#39; equity</a> - 股东权益</li>
-</ol>
-<h1 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h1><p>$$ Assets = Liabilities + Shareholders&#39; Equity $$
-此为大名鼎鼎的accounting equation - 会计等式，在接下来的学习中，这都将是这门课程的核心。当然，作为一个合格的等式，你可以对它进行自由的变形。也许在变形之后，你会觉得它更易于理解。例如：
-$$ Shareholders&#39; Equity = Assets - Liabilities $$</p>
-<!-- ![VIEW](https://elhymq.bn1304.livefilestore.com/y4mlW3Q-RcdcIuZCX65IJjEsMJdn9JX_uUyyiWpgMEKg9zXpHnGqfMwX_AdZu90Y4BGaT5FzB2odX4oS9y-sQ77Gliw6GyO-sMYlqB56U7HEYIN88qFdQD9rLZwCWz1QHuEb6hKRYgDKO1Q1VdiCvjGd-_ljvdZ2xtz4v-r1gV0649mFHbr4YQIy1FXF2kEYxIML6h-yADafSz_2oayCQ7E0Q?width=1200&height=675&cropmode=none) -->
-<h1 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h1><p>Balance sheet需要遵循一定的格式。在世界各地，其格式都是相同的，但可能使用不同的语言。
-Balance sheet分成左右两个部分，左边一栏是Asset，右边一栏是Liability和Shareholders&#39; Equity。你兴许会发现，这个表的左右部分刚好是Accounting equation的左右部分，那么自然而然的，Balance sheet的特点就是这个表的左边和右边的数字应该是相等的。
-Assets部分，将所以应该算作资产的会计科目和金额列入，例如现金、应收账款、存货、房屋。因为资产是可以分为固定资产、流动资产和无形资产的，因此有时候亦将这些项目归入这些类别。
-Liability部分,则包含应付票据、应付账款、公司债等会计科目，可归入包含流动负债、长期负债等大类。Shareholders&#39; Equity部分，包含了普通股股本、资本公积、保留盈余等会计科目。</p>
-<h1 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h1><p>这是一个来自于<a href="https://en.wikipedia.org/wiki/Balance_sheet" target="_blank" rel="noopener">Wikipedia</a>的例子：</p>
-<table>
-<tr>
-<th colspan="2" style="text-align: left">Assets (current)</th>
-<th colspan="3" style="text-align: left">Liabilities and Owners&#39; Equity</th>
-</tr>
-<tr>
-<td style="border-right-style: none">Cash</td>
-<td style="text-align:right; border-left-style:none;">$6,600</td>
-<th colspan="3" style="text-align: left">Liabilities</th>
-</tr>
-<tr>
-<td style="border-right-style: none">Accounts Receivable</td>
-<td style="text-align:right; border-left-style:none;">$6,200</td>
-<td style="border-right-style: none">Notes Payable</td>
-<td style="text-align:right; border-style: none none solid none;">$5,000</td>
-<td style="border-left-style: none"></td>
-</tr>
-<tr>
-<th colspan="2" style="text-align: left">Assets (non-current)</th>
-<td colspan="1" style="border-right-style: none">Accounts Payable</td>
-<td style="text-align:right; border-style: none;"> $25,000</td>
-<td style="border-left-style: none"></td>
-
-</tr>
-<tr>
-<td style="border-right-style: none">Tools and equipment</td>
-<td style="text-align:right; border-left-style:none;">$25,000</td>
-<td colspan="2" style="text-align:center; border-right-style:none;"><i>Total liabilities</i></td>
-<td style="text-align:right; border-left-style:none;">$30,000</td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<th colspan="3" style="text-align: left">Owners&#39; equity</th>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td style="border-right-style: none">Capital Stock</td>
-<td style="text-align:right; border-style:solid none;">$7,000</td>
-<td style="border-left-style: none"></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td style="border-right-style: none">Retained Earnings</td>
-<td style="text-align:right; border-style:none;">$800</td>
-<td style="border-left-style: none"></td>
-</tr>
-<tr>
-<td colspan="2"></td>
-<td colspan="2" style="text-align:center; border-right-style:none;"><i>Total owners&#39; equity</i></td>
-<td style="text-align:right; border-left-style:none;">$7,800</td>
-</tr>
-<tr>
-<td style="border-right-style: none"><i>Total</i></td>
-<td style="text-align:right; border-left-style:none;">$37,800</td>
-<td style="border-right-style: none"><i>Total</i></td>
-<td style="border-style: none none solid none"></td>
-<td style="text-align:right; border-left-style:none;">$37,800</td>
-</tr>
-</table>
-
-<p>可以看到，在这个例子中，assets分为了current assets和non-currents，即中文的流动资产和非流动资产。此表中的流动资产包含现金和应收账款，非流动资产为工具与设备。流动资产与非流动资产的总和共计\$37,800。负债包含应付票据和应付账款，总计\$30,000。所有者权益包含股本和留存收益，总计\$7,800。负债和所有者权益的总和为\$37,800，与资产是相等的，满足accounting equation。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="次のページ"></i></a>
+  </nav>
 
 
 
@@ -1086,12 +1012,12 @@ Liability部分,则包含应付票据、应付账款、公司债等会计科目�
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">ポスト</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">タグ</span>
       </div>
   </nav>
