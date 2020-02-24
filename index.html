@@ -165,6 +165,87 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://nicholaslu.github.io/2020/02/24/Python的奇妙马戏团-其五/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Nicholas Lu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TypeWorld">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/24/Python的奇妙马戏团-其五/" class="post-title-link" itemprop="url">Python的奇妙马戏团-其五</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              <time title="作成日：2020-02-24 23:57:45" itemprop="dateCreated datePublished" datetime="2020-02-24T23:57:45+09:00">2020-02-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">編集日</span>
+                <time title="修正日：2020-02-25 01:31:31" itemprop="dateModified" datetime="2020-02-25T01:31:31+09:00">2020-02-25</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1>斐波那契数列</h1>
+<p>斐波那契数列是我们很喜欢的一个数列，这不仅是因为它的奇妙的数学性质，也是因为它是由递归的方式来计算的。我们一般定义这个数列的第0项为0，第1项为1，此后的每一项都等于前两项的和。</p>
+<p>这种重复的计算是计算机所擅长的，如果让人类计算斐波那契数列，可能算个几十项就算不下去了，而且其中一项算错的话，后面全都会出错。所以试着用Python计算一下斐波那契数列吧，此处计算前五十项。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">fib0 = <span class="number">0</span></span><br><span class="line">fib1 = <span class="number">1</span></span><br><span class="line">print(fib0,<span class="string">"\n"</span>)</span><br><span class="line">print(fib1,<span class="string">"\n"</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>,<span class="number">51</span>):</span><br><span class="line">    fib0, fib1 = fib1, fib0 + fib1</span><br><span class="line">    print(fib1,<span class="string">"\n"</span>)</span><br></pre></td></tr></table></figure>
+<p><code>fib0, fib1 = fib1, fib0+fib1</code>这一句体现了Python比较方便的一点，可以同时给多个变量<strong>同时</strong>赋值。在很多语言中，一次只能给一个变量赋值，一个经典问题是，如何交换a和b的值。在C之类的语言中，你需要这么做</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">t = b</span><br><span class="line">b = a</span><br><span class="line">a = t</span><br></pre></td></tr></table></figure>
+<p>而在Python中，可以这样</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a, b = b, a</span><br></pre></td></tr></table></figure>
+<h1>斐波那契数列函数</h1>
+<p>我们之前用了很多函数，比如<code>print()</code>函数、<code>range()</code>函数。函数的作用是对于输入，给出对应的输出。我们已经可以计算斐波那契数列的某一项的值了，如果我经常在自己的程序中用到斐波那契数列的值，应该怎么办？每次都加一遍上面的代码吗，显然太繁琐。此时可以考虑把这段代码改成一个函数，以后每次使用这个函数就好。</p>
+<p>在构建一个函数的时候，我们需要确定的是：输入、输出和函数名。输入在使用这个函数的时候传递给函数，一般被称为这个函数的参数，可以有多个参数，用<code>,</code>隔开。输出在函数的本体用<code>return</code>语句给出，输出是可选的。函数名要注意意义明确，并且避免和内建函数重名。</p>
+<p>把斐波那契数列的计算函数化时，输入和输出应该是什么呢。<code>for i in range(2,51):</code>这一句中的<code>25</code>决定了计算到哪一项，所以这就应该由函数的参数给出。<code>fib1</code>的值是每次打印的值，这个值应该返回。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fib</span><span class="params">(n)</span>:</span></span><br><span class="line">    fib0 = <span class="number">0</span></span><br><span class="line">    fib1 = <span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>,n):</span><br><span class="line">        fib0, fib1 = fib1, fib0+fib1</span><br><span class="line">    <span class="keyword">return</span> fib1</span><br><span class="line"></span><br><span class="line">print(fib(int(input())))</span><br></pre></td></tr></table></figure>
+<p>最后一句就是对斐波那契数列函数<code>fib()</code>的调用了。</p>
+<p>只要有初始的两个值，就可以计算出后面的所有的值，计算方式也非常明确，那么有没有什么方法可以利用这个特性呢？由于函数可以调用自己，于是便有一种优雅的方式计算斐波那契数列。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fib</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">elif</span> n == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> fib(n<span class="number">-1</span>) + fib(n<span class="number">-2</span>)</span><br><span class="line"></span><br><span class="line">print(fib(int(input())))</span><br></pre></td></tr></table></figure>
+<p>这个函数和上面的函数会给出一样的答案，但是，仅当要计算的是第0项或是第1项时这个函数可以直接给出，在计算其他的项的时候，这个函数会调用自身计算前面的两项，而前面的两项的计算又调用了更前面的四项，分支越来越多，直到全部都调用到了第0项或是第1项为止。也许还无法看出来，但这个方法虽然优雅，但并不高效，其原因就是在反复的调用中产生了非常多的不必要的计算。你可以用上面的两种方法各计算一遍第100项尝试一下。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
     <link itemprop="mainEntityOfPage" href="https://nicholaslu.github.io/2020/02/24/Python的奇妙马戏团-其四/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -188,10 +269,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">投稿日</span>
-              
 
-              <time title="作成日：2020-02-24 15:17:00 / 修正日：23:32:40" itemprop="dateCreated datePublished" datetime="2020-02-24T15:17:00+09:00">2020-02-24</time>
+              <time title="作成日：2020-02-24 15:17:00" itemprop="dateCreated datePublished" datetime="2020-02-24T15:17:00+09:00">2020-02-24</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">編集日</span>
+                <time title="修正日：2020-02-25 00:08:03" itemprop="dateModified" datetime="2020-02-25T00:08:03+09:00">2020-02-25</time>
+              </span>
 
           
 
@@ -1027,118 +1114,6 @@ $$</p>
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
-    <link itemprop="mainEntityOfPage" href="https://nicholaslu.github.io/2017/10/27/幼儿园大班的操作系统安装手册/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Nicholas Lu">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="TypeWorld">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2017/10/27/幼儿园大班的操作系统安装手册/" class="post-title-link" itemprop="url">幼儿园大班的操作系统安装手册</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">投稿日</span>
-
-              <time title="作成日：2017-10-27 23:31:48" itemprop="dateCreated datePublished" datetime="2017-10-27T23:31:48+09:00">2017-10-27</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">編集日</span>
-                <time title="修正日：2017-10-28 15:48:00" itemprop="dateModified" datetime="2017-10-28T15:48:00+09:00">2017-10-28</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1>Intro</h1>
-<p>系统的安装是亘古不变的一个话题。虽然很多汉子靠着这个接近到了妹子，但是大学期间装机无数的在下并没有能够更改自己的人生轨迹。为了能够拆散更多的CP，在此介绍安装操作系统的方法。</p>
-<p>此处一般说的系统，指的是操作系统，即OS，并不是&quot;信号与系统&quot;中的系统。此外，本文<strong>主要</strong>介绍Windows的安装方法。</p>
-<p>本文主要的目的是针对不同的场景设计安装系统最优的方案。</p>
-<p>本文不介绍如何破解/激活操作系统。</p>
-<h1>Ch1 普通中的普通</h1>
-<p>&quot;我新买了一台电脑，但这台电脑什么系统都没有啊。&quot;那么请确保你还有另一台可用的电脑，以及一个可移动存储设备</p>
-<blockquote>
-<p>可移动存储设备指的是：U盘，移动硬盘，光盘，SD卡等存储设备</p>
-</blockquote>
-<h2 id="获取并部署Windows镜像"><a class="header-anchor" href="#获取并部署Windows镜像">¶</a>获取并部署Windows镜像</h2>
-<p>首先你需要获取一个Windows镜像，推荐从<a href="https://msdn.itellyou.cn/" target="_blank" rel="noopener">MSDN, I tell you</a>下载。此网站提供的是ed2k链接，你可以使用<a href="http://www.emule-project.net" target="_blank" rel="noopener">eMule</a><s>和迅雷</s>等下载软件下载。请根据需求选择所需的Windows版本，并注意对于大多数人，你应该选择的是64位的Windows。</p>
-<p><img src="https://2274xq.bn1304.livefilestore.com/y4m0HmtYlAnPDvOHVWI1ByNdpHfEPJH1sCh9nDfc6hHBflX_Eee4K0X2g8wB0FmQnvyhgzKuomyCoVWh_gOm0BqfgcEJWHoRS6BtbPa3m0Q3OG4z7JILzqRBW-3IJ8Y4QSbttIOHOlCL7cgjKavbKVYhpNxWmpGSkALppIU4y3Mr6-uqhTOL-XezJsGqNjpXD1djuF0p4avkPQYtmGuc8dBbg?width=1709&amp;height=479&amp;cropmode=none" alt="Ch1-1"></p>
-<p>在略微的等待之后，此镜像文件应该下载完成了。请注意此类文件的扩展名是&quot;.iso&quot;，这代表它是可以被写入到光盘中的。</p>
-<p>请准备好你的U盘等可移动存储设备，并确保已经备份好了这个设备的文件了，因为之后会对此设备进行格式化等操作，届时设备上的所有文件都会丢失。你选择的可移动存储设备的容量应该大于这个镜像文件的大小，例如当镜像文件为4.31GB的时候，使用一个4GB的U盘是不够的。</p>
-<blockquote>
-<p>一张空白的DVD光盘的容量一般是4.7GB，这使得对于大部分镜像文件，DVD光盘都能应付过来。</p>
-</blockquote>
-<p>在这个例子中，我使用U盘作为示范，这也是现在最为常用的一种媒介。</p>
-<h2 id="从U盘启动"><a class="header-anchor" href="#从U盘启动">¶</a>从U盘启动</h2>
-<h2 id="安装操作系统"><a class="header-anchor" href="#安装操作系统">¶</a>安装操作系统</h2>
-<h1>Ch2 我的电脑已经运行着Windows 10</h1>
-<p>作为<em>时代的弄潮儿</em>，我的电脑运行着最新的Windows 10。若要重新安装她，我应该：</p>
-<ol>
-<li>打开Windows 设置</li>
-</ol>
-<blockquote>
-<p>如果你不知道怎么打开Windows 设置，介绍最简单的一种方法，右击开始菜单，点击&quot;设置&quot;</p>
-</blockquote>
-<ol start="2">
-<li>点击更新与安全</li>
-<li>点击左栏的恢复</li>
-<li>点击&quot;重置此电脑&quot;下的开始</li>
-<li>坐和放宽</li>
-</ol>
-<blockquote>
-<p>也就是不要再去乱动了</p>
-</blockquote>
-<p><img src="https://2273xq.bn1304.livefilestore.com/y4mMlc_qcPGcySZ4ac8YrYujWYRr_HPS7vmJUfhyNt-KNiRN2ZUIWRtHoVKfM7_N6ugkUwu-ZQxLn9XATQnGd-BhVjWYhLwCTSY6uyHdBWqqFvJcT5fneBjweyLXnhWLnC2QrJoLeDIcis_iqcBdz-4MNaMqv9YOUDY74qMa5idCcCWDMTiRL-5FOPkng-IhTxnM3xffr00girBiRirpBYPLQ?width=1885&amp;height=1507&amp;cropmode=none" alt="Ch2-1"></p>
-<p>#Ch3 我的电脑已经运行着Windows，但我想额外安装一个Windows</p>
-<p>#Ch4 我的电脑已经运行着Windows，我想额外安装一个Windows，但我没有U盘</p>
-<p>#Ch5 我的电脑已经运行着Windows，我想额外安装一个Windows，但我不想划分一个分区给她</p>
-<p>#Ch6 我的电脑已经运行着Windows，我需要多个Windows用于测试</p>
-<p>#Ch7 我的电脑已经运行着Windows，还有什么花哨的方法吗</p>
-<p>#Ch8 我的电脑已经运行着Windows，我想升级至更新的Windows</p>
-<p>#Ch9 我的电脑已经运行着Windows，我想降级至更老的Windows</p>
-<p>#Ch10 我的电脑已经运行着Windows，我想投入Linux邪教</p>
-<p>#Ch11 终极奥义：我的电脑空空如也，但我拥有一台Windows Server</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1211,7 +1186,7 @@ $$</p>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-count">15</span>
           <span class="site-state-item-name">ポスト</span>
         </a>
       </div>

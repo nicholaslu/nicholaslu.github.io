@@ -165,6 +165,118 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://nicholaslu.github.io/2017/10/27/幼儿园大班的操作系统安装手册/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Nicholas Lu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TypeWorld">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/10/27/幼儿园大班的操作系统安装手册/" class="post-title-link" itemprop="url">幼儿园大班的操作系统安装手册</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+
+              <time title="作成日：2017-10-27 23:31:48" itemprop="dateCreated datePublished" datetime="2017-10-27T23:31:48+09:00">2017-10-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">編集日</span>
+                <time title="修正日：2017-10-28 15:48:00" itemprop="dateModified" datetime="2017-10-28T15:48:00+09:00">2017-10-28</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1>Intro</h1>
+<p>系统的安装是亘古不变的一个话题。虽然很多汉子靠着这个接近到了妹子，但是大学期间装机无数的在下并没有能够更改自己的人生轨迹。为了能够拆散更多的CP，在此介绍安装操作系统的方法。</p>
+<p>此处一般说的系统，指的是操作系统，即OS，并不是&quot;信号与系统&quot;中的系统。此外，本文<strong>主要</strong>介绍Windows的安装方法。</p>
+<p>本文主要的目的是针对不同的场景设计安装系统最优的方案。</p>
+<p>本文不介绍如何破解/激活操作系统。</p>
+<h1>Ch1 普通中的普通</h1>
+<p>&quot;我新买了一台电脑，但这台电脑什么系统都没有啊。&quot;那么请确保你还有另一台可用的电脑，以及一个可移动存储设备</p>
+<blockquote>
+<p>可移动存储设备指的是：U盘，移动硬盘，光盘，SD卡等存储设备</p>
+</blockquote>
+<h2 id="获取并部署Windows镜像"><a class="header-anchor" href="#获取并部署Windows镜像">¶</a>获取并部署Windows镜像</h2>
+<p>首先你需要获取一个Windows镜像，推荐从<a href="https://msdn.itellyou.cn/" target="_blank" rel="noopener">MSDN, I tell you</a>下载。此网站提供的是ed2k链接，你可以使用<a href="http://www.emule-project.net" target="_blank" rel="noopener">eMule</a><s>和迅雷</s>等下载软件下载。请根据需求选择所需的Windows版本，并注意对于大多数人，你应该选择的是64位的Windows。</p>
+<p><img src="https://2274xq.bn1304.livefilestore.com/y4m0HmtYlAnPDvOHVWI1ByNdpHfEPJH1sCh9nDfc6hHBflX_Eee4K0X2g8wB0FmQnvyhgzKuomyCoVWh_gOm0BqfgcEJWHoRS6BtbPa3m0Q3OG4z7JILzqRBW-3IJ8Y4QSbttIOHOlCL7cgjKavbKVYhpNxWmpGSkALppIU4y3Mr6-uqhTOL-XezJsGqNjpXD1djuF0p4avkPQYtmGuc8dBbg?width=1709&amp;height=479&amp;cropmode=none" alt="Ch1-1"></p>
+<p>在略微的等待之后，此镜像文件应该下载完成了。请注意此类文件的扩展名是&quot;.iso&quot;，这代表它是可以被写入到光盘中的。</p>
+<p>请准备好你的U盘等可移动存储设备，并确保已经备份好了这个设备的文件了，因为之后会对此设备进行格式化等操作，届时设备上的所有文件都会丢失。你选择的可移动存储设备的容量应该大于这个镜像文件的大小，例如当镜像文件为4.31GB的时候，使用一个4GB的U盘是不够的。</p>
+<blockquote>
+<p>一张空白的DVD光盘的容量一般是4.7GB，这使得对于大部分镜像文件，DVD光盘都能应付过来。</p>
+</blockquote>
+<p>在这个例子中，我使用U盘作为示范，这也是现在最为常用的一种媒介。</p>
+<h2 id="从U盘启动"><a class="header-anchor" href="#从U盘启动">¶</a>从U盘启动</h2>
+<h2 id="安装操作系统"><a class="header-anchor" href="#安装操作系统">¶</a>安装操作系统</h2>
+<h1>Ch2 我的电脑已经运行着Windows 10</h1>
+<p>作为<em>时代的弄潮儿</em>，我的电脑运行着最新的Windows 10。若要重新安装她，我应该：</p>
+<ol>
+<li>打开Windows 设置</li>
+</ol>
+<blockquote>
+<p>如果你不知道怎么打开Windows 设置，介绍最简单的一种方法，右击开始菜单，点击&quot;设置&quot;</p>
+</blockquote>
+<ol start="2">
+<li>点击更新与安全</li>
+<li>点击左栏的恢复</li>
+<li>点击&quot;重置此电脑&quot;下的开始</li>
+<li>坐和放宽</li>
+</ol>
+<blockquote>
+<p>也就是不要再去乱动了</p>
+</blockquote>
+<p><img src="https://2273xq.bn1304.livefilestore.com/y4mMlc_qcPGcySZ4ac8YrYujWYRr_HPS7vmJUfhyNt-KNiRN2ZUIWRtHoVKfM7_N6ugkUwu-ZQxLn9XATQnGd-BhVjWYhLwCTSY6uyHdBWqqFvJcT5fneBjweyLXnhWLnC2QrJoLeDIcis_iqcBdz-4MNaMqv9YOUDY74qMa5idCcCWDMTiRL-5FOPkng-IhTxnM3xffr00girBiRirpBYPLQ?width=1885&amp;height=1507&amp;cropmode=none" alt="Ch2-1"></p>
+<p>#Ch3 我的电脑已经运行着Windows，但我想额外安装一个Windows</p>
+<p>#Ch4 我的电脑已经运行着Windows，我想额外安装一个Windows，但我没有U盘</p>
+<p>#Ch5 我的电脑已经运行着Windows，我想额外安装一个Windows，但我不想划分一个分区给她</p>
+<p>#Ch6 我的电脑已经运行着Windows，我需要多个Windows用于测试</p>
+<p>#Ch7 我的电脑已经运行着Windows，还有什么花哨的方法吗</p>
+<p>#Ch8 我的电脑已经运行着Windows，我想升级至更新的Windows</p>
+<p>#Ch9 我的电脑已经运行着Windows，我想降级至更老的Windows</p>
+<p>#Ch10 我的电脑已经运行着Windows，我想投入Linux邪教</p>
+<p>#Ch11 终极奥义：我的电脑空空如也，但我拥有一台Windows Server</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
     <link itemprop="mainEntityOfPage" href="https://nicholaslu.github.io/2017/10/23/Shareholders-equity/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -573,7 +685,7 @@ Liability部分,则包含应付票据、应付账款、公司债等会计科目�
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-count">15</span>
           <span class="site-state-item-name">ポスト</span>
         </a>
       </div>
