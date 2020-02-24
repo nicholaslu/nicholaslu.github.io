@@ -165,6 +165,132 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
+    <link itemprop="mainEntityOfPage" href="https://nicholaslu.github.io/2020/02/24/Python的奇妙马戏团-其四/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Nicholas Lu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TypeWorld">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/24/Python的奇妙马戏团-其四/" class="post-title-link" itemprop="url">Python的奇妙马戏团-其四</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">投稿日</span>
+              
+
+              <time title="作成日：2020-02-24 15:17:00 / 修正日：23:29:19" itemprop="dateCreated datePublished" datetime="2020-02-24T15:17:00+09:00">2020-02-24</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote>
+<p>Judgment is given to men that they may use it.    </p>
+<p align="right">On Liberty by John Stuart Mill</p>
+</blockquote>
+<h1 id="判断力的获取"><a href="#判断力的获取" class="headerlink" title="判断力的获取"></a>判断力的获取</h1><p>如果说为什么需要判断，那么只能说有时候会根据不同的情况来做不同的事情，比如如果是周三的话就吃Pizza，不是的话就不吃。</p>
+<p><img src="https://eepq3a.bn.files.1drv.com/y4mnirfxR9StAbnFXknikr-jY8cQQm_vJuiR_1HjYs2j0tU1m0xxpPyTqTSUaSBrFQ94XecqZx5blUObatD21AohxUODQaOD6ZJw59jAWPMSxYnuXuuqwPf31JgcRbr3FVzXXE3g41pTqTPpSO8V7RuibyBTNdcY73xh1ybENkC3Xv0gVwvmu1cwJXqCTFqFM3PvtJxjka1cuWZR385kgfdWQ?width=501&amp;height=281&amp;cropmode=none" alt="Big Wednesday"></p>
+<p>那么条件语句的出现就显得十分自然，在Python中，我们使用<code>if</code>语句来对条件进行检测，当<code>if</code>语句中的条件成立时，执行<code>if</code>语句后缩进的那些语句，再继续执行后面的内容；当不成立时，则跳过<code>if</code>语句后缩进的那些语句，直接继续执行后面的内容。</p>
+<p>结合循环结构，这是一个输出100以内的偶数的程序。<code>%</code>运算符的含义是取余数，<code>a%b</code>返回的是<code>a</code>除以<code>b</code>的余数。很明显偶数除以2的余数为0，奇数除以2的余数为1。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">i = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span>(i &lt;= <span class="number">100</span>):</span><br><span class="line">    <span class="keyword">if</span> i % <span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">        print(i,<span class="string">"is even"</span>)</span><br><span class="line">    i = i + <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>只有当<code>i % 2 == 0</code>成立的时候，<code>print()</code>才会执行。与此相对的<code>i = i + 1</code>是总是执行的。此处的<code>==</code>有别于<code>=</code>（赋值），是真正的等于号的意思，这种运算符叫做比较运算符，在循环和判断时都经常用到，其他的还有：</p>
+<table>
+<thead>
+<tr>
+<th>比较运算符</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>==</code></td>
+<td>等于</td>
+</tr>
+<tr>
+<td><code>!=</code></td>
+<td>不等于</td>
+</tr>
+<tr>
+<td><code>&lt;</code></td>
+<td>小于</td>
+</tr>
+<tr>
+<td><code>&gt;</code></td>
+<td>大于</td>
+</tr>
+<tr>
+<td><code>&lt;=</code></td>
+<td>小于等于</td>
+</tr>
+<tr>
+<td><code>&gt;=</code></td>
+<td>大于等于</td>
+</tr>
+</tbody>
+</table>
+<p>那么当我们偶数和奇数都想输出的时候，应该怎么做呢，运行两遍<code>if</code>语句吗？这样的确可以达到目的，但是多此一举，因为并不存在偶数和奇数以外的整数，也就是不满足上面的条件的数，自然都是奇数了。这种情况，可以使用<code>if</code>和<code>else</code>语句来方便的完成目的。执行的时候，先对<code>if</code>语句的条件进行判断，满足的话执行<code>if</code>语句后面的语句，不满足的话执行<code>else</code>语句后面的语句。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">i = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span>(i &lt;= <span class="number">100</span>):</span><br><span class="line">    <span class="keyword">if</span> i % <span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">        print(i,<span class="string">"is even"</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(i,<span class="string">"is odd"</span>)</span><br><span class="line">    i = i + <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>如果用上面的代码判断整数以外的数，得到的结果还正确吗。显然不正确，因为包含小数的数，如1.5，都会被判断为奇数。此时可以引入<code>if-elif-else</code>结构，<code>elif</code>的意思为else if，即<code>if</code>的条件不成立的情况下，再进行一次判断，如果不成立，则跳转至最后的<code>else</code>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">i = <span class="number">0.0</span></span><br><span class="line"><span class="keyword">while</span>(i &lt;= <span class="number">10</span>):</span><br><span class="line">    <span class="keyword">if</span> i % <span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">        print(round(i),<span class="string">"is even"</span>)</span><br><span class="line">    <span class="keyword">elif</span> i % <span class="number">2</span> == <span class="number">1</span>:</span><br><span class="line">        print(round(i),<span class="string">"is odd"</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(i,<span class="string">"is float"</span>)</span><br><span class="line">    i = round(i + <span class="number">0.1</span>,<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<p>此处有时使用了<code>round()</code>函数，这是为什么呢。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="やってみよう"><a href="#やってみよう" class="headerlink" title="やってみよう"></a>やってみよう</h1><p> 闰年的计算一直很麻烦，其遵循着以下的规则<a href="https://zh.wikipedia.org/wiki/%E9%97%B0%E5%B9%B4" target="_blank" rel="noopener">^1</a>：</p>
+<ol>
+<li><p>公元年分除以4不可整除，为平年。</p>
+</li>
+<li><p>公元年分除以4可整除但除以100不可整除，为闰年。</p>
+</li>
+<li><p>公元年分除以100可整除但除以400不可整除，为平年。</p>
+</li>
+<li><p>公元年分除以400可整除，为闰年。  </p>
+</li>
+</ol>
+<p>看上去非常复杂，稍微整理一下:</p>
+<p>判断是否能被4整除，如果不可，输出平年；如果可，进行下一步</p>
+<p>判断是否能被100整除，如果不可，输出闰年；如果可，进行下一步</p>
+<p>判断是否能被400整除，如果不可，输出平年；如果可，输出闰年</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">st=&gt;start: Input y</span><br><span class="line">e1=&gt;end: Normal year</span><br><span class="line">e2=&gt;end: Leap year</span><br><span class="line">cond1=&gt;condition: y % 4 = 0?</span><br><span class="line">cond2=&gt;condition: y % 100 = 0? </span><br><span class="line">cond3=&gt;condition: y % 400 = 0?</span><br><span class="line"></span><br><span class="line">st-&gt;cond1</span><br><span class="line">cond1(yes)-&gt;cond2</span><br><span class="line">cond1(no)-&gt;e1</span><br><span class="line">cond2(yes)-&gt;cond3</span><br><span class="line">cond2(no)-&gt;e2</span><br><span class="line">cond3(yes)-&gt;e2</span><br><span class="line">cond3(no)-&gt;e1</span><br></pre></td></tr></table></figure>
+<p>可以发现需要使用三个条件语句。<code>input()</code>函数用于在程序中输入一个值。<code>y = input(&quot;Input year: &quot;)</code>可以打印出Input year: 的提示语后，输入一个值并赋给<code>y。</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">y = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span>( <span class="keyword">True</span> ):</span><br><span class="line">    y = input(<span class="string">"Input year: "</span>)</span><br><span class="line">    <span class="keyword">if</span> y == <span class="string">"quit"</span>: <span class="keyword">break</span></span><br><span class="line">    y = int(y)</span><br><span class="line">    <span class="keyword">if</span> y % <span class="number">4</span> != <span class="number">0</span>:</span><br><span class="line">        print(y,<span class="string">"is a normal year"</span>)</span><br><span class="line">    <span class="keyword">elif</span> y % <span class="number">100</span> != <span class="number">0</span>:</span><br><span class="line">        print(y,<span class="string">"is a leap year"</span>)</span><br><span class="line">    <span class="keyword">elif</span> y % <span class="number">400</span> != <span class="number">0</span>:</span><br><span class="line">        print(y,<span class="string">"is a normal year"</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(y,<span class="string">"is a leap year"</span>)</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
     <link itemprop="mainEntityOfPage" href="https://nicholaslu.github.io/2020/01/10/Python的奇妙马戏团-其三/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -196,7 +322,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">編集日</span>
-                <time title="修正日：2020-01-11 04:14:06" itemprop="dateModified" datetime="2020-01-11T04:14:06+09:00">2020-01-11</time>
+                <time title="修正日：2020-02-24 15:16:19" itemprop="dateModified" datetime="2020-02-24T15:16:19+09:00">2020-02-24</time>
               </span>
 
           
@@ -213,11 +339,11 @@
           <h1 id="找事情干"><a href="#找事情干" class="headerlink" title="找事情干"></a>找事情干</h1><p>当然，只是在屏幕输出&quot;Hello world!&quot;并不是我们所期望的事情，因为这样的事情看上去并没有那么有趣。我们想要做的，是一些有趣的，最好是人类不想去做的事情，这样才显示出编程的优越性。比如说计算从1加到100的值。</p>
 <p>下面介绍一下变量的概念。在计算机中，变量意味着一个可以变化的量，不同的变量可能会存有不同的数据类型，比如数字、列表、字符串。我们在第一次给这个变量赋值的时候会确定这个变量的类型，之后就不会再改变了。在赋值时，我们使用等号<code>=</code>。例如</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a=<span class="number">3</span></span><br></pre></td></tr></table></figure>
-<p>这样，我们就在创建数字变量a的同时，给它赋予了3的数值。虽然使用了等号，但这个语句和数学中等号的意义是不一样的，它不代表左右两式相等，而是代表把右边的值赋予给左边。经常，我们会在代码中恰当的地方加入空格，使它看起来更加易读，这并不影响语法的正确性。例如</p>
+<p>这样，我们就在创建数字变量<code>a</code>的同时，给它赋予了3的数值。虽然使用了等号，但这个语句和数学中等号的意义是不一样的，它不代表左右两式相等，而是代表把右边的值赋予给左边。经常，我们会在代码中恰当的地方加入空格，使它看起来更加易读，这并不影响语法的正确性。例如</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">3</span></span><br></pre></td></tr></table></figure>
-<p>因为此时变量a中存入了3，所以我们可以通过<code>print()</code>函数来输出a的值。</p>
+<p>因为此时变量<code>a</code>中存入了3，所以我们可以通过<code>print()</code>函数来输出<code>a</code>的值。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">3</span></span><br><span class="line">print(a)</span><br></pre></td></tr></table></figure>
-<p>此时，程序会输出3这个数字。值得注意的是，<code>print(a)</code>和<code>print(&quot;a&quot;)</code>的意义是不一样的，前者输出a这个变量的值，后者直接输出a这个字符串。我们还可以再创建一个变量b，并把a的值赋予它，例如</p>
+<p>此时，程序会输出3这个数字。值得注意的是，<code>print(a)</code>和<code>print(&quot;a&quot;)</code>的意义是不一样的，前者输出<code>a</code>这个变量的值，后者直接输出a这个字符串。我们还可以再创建一个变量<code>b</code>，并把<code>a</code>的值赋予它，例如</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">3</span></span><br><span class="line">print(a)</span><br><span class="line">b = a</span><br><span class="line">print(b)</span><br></pre></td></tr></table></figure>
 <p>这样程序就会输出两个3出来。值得注意的是，这样创建出来的b的变量类型和a肯定是一致的，都是数字。</p>
 <p>试一下下面的代码会输出什么</p>
@@ -227,7 +353,7 @@
 <p>我们欣喜的发现，这和我们笔算的结果5050是一样的。现在我们这么快就掌握了如何用Python来计算1到100的和。</p>
 <h1 id="向高斯求助"><a href="#向高斯求助" class="headerlink" title="向高斯求助"></a>向高斯求助</h1><p>但是你也许会疑惑，这和我想象中的编程好像不一样呀。是的，如果我们翻一翻小学课本，会发现高斯并不是这么求和的。他发现了第n项和第101-n项的和总是为101的规律，而得到了一个简便的公式。如果我们应用这个结论，便可以得到下面这个简便的程序。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">start = <span class="number">1</span></span><br><span class="line">end = <span class="number">100</span></span><br><span class="line">answer = (start + end)*(end - start + <span class="number">1</span>) / <span class="number">2</span></span><br></pre></td></tr></table></figure>
-<p>在Python中，我们可以直接使用加减乘除进行计算，但由于键盘上并没有乘除的符号，所以使用*和/来进行替代。所以上式等于
+<p>在Python中，我们可以直接使用加减乘除进行计算，但由于键盘上并没有乘除的符号，所以使用<code>*</code>和<code>/</code>来进行替代。所以上式等于
 $$
 answer=\frac{\left(start+end\right)\times\left(end-start+1\right)}{2}
 $$
@@ -955,64 +1081,6 @@ $$</p>
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ja">
-    <link itemprop="mainEntityOfPage" href="https://nicholaslu.github.io/2017/10/23/Shareholders-equity/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Nicholas Lu">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="TypeWorld">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2017/10/23/Shareholders-equity/" class="post-title-link" itemprop="url">Shareholders' equity</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">投稿日</span>
-              
-
-              <time title="作成日：2017-10-23 13:04:00 / 修正日：14:57:00" itemprop="dateCreated datePublished" datetime="2017-10-23T13:04:00+09:00">2017-10-23</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1085,7 +1153,7 @@ $$</p>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">ポスト</span>
         </a>
       </div>

@@ -54,7 +54,7 @@
 <meta property="og:site_name" content="TypeWorld">
 <meta property="og:description" content="找事情干当然，只是在屏幕输出&amp;quot;Hello world!&amp;quot;并不是我们所期望的事情，因为这样的事情看上去并没有那么有趣。我们想要做的，是一些有趣的，最好是人类不想去做的事情，这样才显示出编程的优越性。比如说计算从1加到100的值。 下面介绍一下变量的概念。在计算机中，变量意味着一个可以变化的量，不同的变量可能会存有不同的数据类型，比如数字、列表、字符串。我们在第一次给这个变量赋值的">
 <meta property="og:locale" content="ja">
-<meta property="og:updated_time" content="2020-01-10T19:14:06.384Z">
+<meta property="og:updated_time" content="2020-02-24T06:16:19.168Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python的奇妙马戏团-其三">
 <meta name="twitter:description" content="找事情干当然，只是在屏幕输出&amp;quot;Hello world!&amp;quot;并不是我们所期望的事情，因为这样的事情看上去并没有那么有趣。我们想要做的，是一些有趣的，最好是人类不想去做的事情，这样才显示出编程的优越性。比如说计算从1加到100的值。 下面介绍一下变量的概念。在计算机中，变量意味着一个可以变化的量，不同的变量可能会存有不同的数据类型，比如数字、列表、字符串。我们在第一次给这个变量赋值的">
@@ -200,7 +200,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">編集日</span>
-                <time title="修正日：2020-01-11 04:14:06" itemprop="dateModified" datetime="2020-01-11T04:14:06+09:00">2020-01-11</time>
+                <time title="修正日：2020-02-24 15:16:19" itemprop="dateModified" datetime="2020-02-24T15:16:19+09:00">2020-02-24</time>
               </span>
 
           
@@ -217,11 +217,11 @@
         <h1 id="找事情干"><a href="#找事情干" class="headerlink" title="找事情干"></a>找事情干</h1><p>当然，只是在屏幕输出&quot;Hello world!&quot;并不是我们所期望的事情，因为这样的事情看上去并没有那么有趣。我们想要做的，是一些有趣的，最好是人类不想去做的事情，这样才显示出编程的优越性。比如说计算从1加到100的值。</p>
 <p>下面介绍一下变量的概念。在计算机中，变量意味着一个可以变化的量，不同的变量可能会存有不同的数据类型，比如数字、列表、字符串。我们在第一次给这个变量赋值的时候会确定这个变量的类型，之后就不会再改变了。在赋值时，我们使用等号<code>=</code>。例如</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a=<span class="number">3</span></span><br></pre></td></tr></table></figure>
-<p>这样，我们就在创建数字变量a的同时，给它赋予了3的数值。虽然使用了等号，但这个语句和数学中等号的意义是不一样的，它不代表左右两式相等，而是代表把右边的值赋予给左边。经常，我们会在代码中恰当的地方加入空格，使它看起来更加易读，这并不影响语法的正确性。例如</p>
+<p>这样，我们就在创建数字变量<code>a</code>的同时，给它赋予了3的数值。虽然使用了等号，但这个语句和数学中等号的意义是不一样的，它不代表左右两式相等，而是代表把右边的值赋予给左边。经常，我们会在代码中恰当的地方加入空格，使它看起来更加易读，这并不影响语法的正确性。例如</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">3</span></span><br></pre></td></tr></table></figure>
-<p>因为此时变量a中存入了3，所以我们可以通过<code>print()</code>函数来输出a的值。</p>
+<p>因为此时变量<code>a</code>中存入了3，所以我们可以通过<code>print()</code>函数来输出<code>a</code>的值。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">3</span></span><br><span class="line">print(a)</span><br></pre></td></tr></table></figure>
-<p>此时，程序会输出3这个数字。值得注意的是，<code>print(a)</code>和<code>print(&quot;a&quot;)</code>的意义是不一样的，前者输出a这个变量的值，后者直接输出a这个字符串。我们还可以再创建一个变量b，并把a的值赋予它，例如</p>
+<p>此时，程序会输出3这个数字。值得注意的是，<code>print(a)</code>和<code>print(&quot;a&quot;)</code>的意义是不一样的，前者输出<code>a</code>这个变量的值，后者直接输出a这个字符串。我们还可以再创建一个变量<code>b</code>，并把<code>a</code>的值赋予它，例如</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">3</span></span><br><span class="line">print(a)</span><br><span class="line">b = a</span><br><span class="line">print(b)</span><br></pre></td></tr></table></figure>
 <p>这样程序就会输出两个3出来。值得注意的是，这样创建出来的b的变量类型和a肯定是一致的，都是数字。</p>
 <p>试一下下面的代码会输出什么</p>
@@ -231,7 +231,7 @@
 <p>我们欣喜的发现，这和我们笔算的结果5050是一样的。现在我们这么快就掌握了如何用Python来计算1到100的和。</p>
 <h1 id="向高斯求助"><a href="#向高斯求助" class="headerlink" title="向高斯求助"></a>向高斯求助</h1><p>但是你也许会疑惑，这和我想象中的编程好像不一样呀。是的，如果我们翻一翻小学课本，会发现高斯并不是这么求和的。他发现了第n项和第101-n项的和总是为101的规律，而得到了一个简便的公式。如果我们应用这个结论，便可以得到下面这个简便的程序。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">start = <span class="number">1</span></span><br><span class="line">end = <span class="number">100</span></span><br><span class="line">answer = (start + end)*(end - start + <span class="number">1</span>) / <span class="number">2</span></span><br></pre></td></tr></table></figure>
-<p>在Python中，我们可以直接使用加减乘除进行计算，但由于键盘上并没有乘除的符号，所以使用*和/来进行替代。所以上式等于
+<p>在Python中，我们可以直接使用加减乘除进行计算，但由于键盘上并没有乘除的符号，所以使用<code>*</code>和<code>/</code>来进行替代。所以上式等于
 $$
 answer=\frac{\left(start+end\right)\times\left(end-start+1\right)}{2}
 $$
@@ -287,7 +287,10 @@ $$
     <a href="/2020/01/10/旅行商问题的暴力解法/" rel="prev" title="旅行商问题的暴力解法">
       <i class="fa fa-chevron-left"></i> 旅行商问题的暴力解法
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2020/02/24/Python的奇妙马戏团-其四/" rel="next" title="Python的奇妙马戏团-其四">
+      Python的奇妙马戏团-其四 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -363,7 +366,7 @@ $$
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">ポスト</span>
         </a>
       </div>
