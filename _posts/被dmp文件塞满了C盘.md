@@ -1,0 +1,35 @@
+---
+title: 被dmp文件塞满了C盘
+date: 2018-01-29 01:46:55
+tags:
+---
+SSD的空间因为只有256GB，因此需要对它定期进行清理。好在Win10现在的卸载程序页面已经足够好用，可以按照大小和位置（例如C:）进行检索。但是这次，排在第一的出乎意料的并不是Adobe家族的成员，而是一个Microsoft Store上的app：Tile Genie，其空间占据了17.4GB。
+
+![p1](https://fz9n3q.bn1304.livefilestore.com/y4mtAzZEJxJ7vJz9REYluObiXl2CmHPR08SpNJPaZw962M5SgQPF4BezJZ53h5ta4K8iQSBaYqgsPhV2FKPzuJeHX8Dreqc6m2lDHTs_GWquwpotnkENjUEUgTbpWOP6KfREUxo3ZLa3Hang6hRS2wDmYRTzZuZKM2mn-urMSmyHkaiWUzLL1UA7_iZG22QFka4q9-bCnLV1j4zsNm3CKTA-A?width=1039&height=1135&cropmode=none)
+
+Tile Genie是一个能够自定义的图片切割并创建为开始菜单磁贴的app，其大小只有0.3M，而17.4GB已经远远大于其可能占据的空间
+
+![p2](https://fp9e3q.bn1304.livefilestore.com/y4mVqpfHC-GJUdCXJOdvfd8Qa5jYozp7Ss3tpi0IvwYHJA4b164ggGU8EsCAhD2e3ofuUr0i_5QaCPMx8JhxfmyTR-rnCViSbcbR1XicXvtfIkBIKOayS9OBBJ1ESS_n6HqWJWUok3-MNrERrjEOteFSWLnij8NNGJf0Fna2CD5vrBsxMGotMZzZsLbb8S93Ez42J4hbVtfAXZpQSoxpjnaNA?width=1814&height=874&cropmode=none)
+
+此为效果
+
+![p3](https://fp9f3q.bn1304.livefilestore.com/y4m-1tHVctB1B5UY008vrI7iSed2Y3TWhHIJk4bRi4c739lXzKcoF9amDUHQaYzh8TQx-ZZB6Kqx7KKjHBVD6-9_NV4oUtm0DYKBNJPENFhTwVrkEbz-m-4oHYEfflGdMXvwN88tD3loeeokvGxJmvao5P2gYuXLPbgSpjaung3n0G0if-1k5WZTMchC2wSFmBHNyphS5AthESYxoRfq2xAcw?width=1291&height=1447&cropmode=none)
+
+虽然说也有可能是Win10计算的方式有误，但还是必要进行探寻。在app的安装目录并没有找到任何异常的文件。在使用WinDirStat扫描之后，便能发现位于此app存储data的文件夹。
+
+这两个文件夹分别位于：
+
+C:\Program Files\WindowsApps\52295McMullenSoftware.TileGenie_1.3.0.1_neutral__kfbqnnmtpr2vc
+
+C:\Users\nicho\AppData\Local\Packages\52295McMullenSoftware.TileGenie_kfbqnnmtpr2vc
+
+![p4](https://fp9h3q.bn1304.livefilestore.com/y4maI0N3bhXSy3EDRCvgpR_YaYzsFDxVY0as4s12RkTMMM0CM6dE5qpeTF1k-rL0U7RMv1eh63QazN22zODkFwXraCH8Lb606JAyH8Y_9yclbCxzrRpMePBIszCJnh4p1m9J3vMGdNCw_eDlyyGvVk384LacnAEQDFWBtypcH9zxG_WHJb9P2h1xTQQ-1hxRJhAakD2CfpCWQOKeJ7IxouETA?width=2732&height=1472&cropmode=none)
+
+在此文件夹的子文件夹AC内，有1102个大小为16.8MB的dmp文件（Memory Dump File），此文件用于存储进程的内存信息，一般只在出错的时候创建。而此文件夹足足有1102个这样的文件，那么可能的情况是：
+1. 此app会在出错的时候创建dmp文件
+2. 此app出错的频率极高
+3. 此app并不打算自己清除dmp文件
+
+![p5](https://fp9g3q.bn1304.livefilestore.com/y4mU54YR-abr411Q72asENHJeW-f7kpon5YC2Wczvg8yCnVTgHrE6RbsJhh6gUI4lsLaLU9UTa1a4EMC_dxhmJnkndFv6LXZJHXxbTB7_UdIx16ffxuxBbZ6PPqzxDZnEplk9eWIg69SAAgD7Q632ZTpUST3JqHAjUjfqb0S_tUD3YOhlD8Q2dCJ_GDPgS8FqXrvTlRMDTL_h2P1X-FOacAhw?width=1744&height=1173&cropmode=none)
+
+实际上Tile Genie也有数年没有更新了，存在着很多bug，上一次更新的内容还是兼容Win8.1，也就是并没有对Win10进行兼容。最终我清除了这些文件，或许是时候寻找一个替代品了？

@@ -1,0 +1,126 @@
+---
+title: Python的奇妙马戏团-其四
+date: 2020-02-24 15:17:00
+tags: Python
+mathjax: true
+---
+
+> Judgment is given to men that they may use it.    
+>
+> <p align="right">On Liberty by John Stuart Mill</p>
+
+# 判断力的获取
+
+如果说为什么需要判断，那么只能说有时候会根据不同的情况来做不同的事情，比如如果是周三的话就吃Pizza，不是的话就不吃。
+
+![Big Wednesday](https://eepq3a.bn.files.1drv.com/y4mnirfxR9StAbnFXknikr-jY8cQQm_vJuiR_1HjYs2j0tU1m0xxpPyTqTSUaSBrFQ94XecqZx5blUObatD21AohxUODQaOD6ZJw59jAWPMSxYnuXuuqwPf31JgcRbr3FVzXXE3g41pTqTPpSO8V7RuibyBTNdcY73xh1ybENkC3Xv0gVwvmu1cwJXqCTFqFM3PvtJxjka1cuWZR385kgfdWQ?width=501&height=281&cropmode=none)
+
+那么条件语句的出现就显得十分自然，在Python中，我们使用`if`语句来对条件进行检测，当`if`语句中的条件成立时，执行`if`语句后缩进的那些语句，再继续执行后面的内容；当不成立时，则跳过`if`语句后缩进的那些语句，直接继续执行后面的内容。
+
+结合循环结构，这是一个输出100以内的偶数的程序。`%`运算符的含义是取余数，`a % b`返回的是`a`除以`b`的余数。很明显偶数除以2的余数为0，奇数除以2的余数为1。
+
+```python
+i = 0
+while(i <= 100):
+    if i % 2 == 0:
+        print(i,"is even")
+    i = i + 1
+```
+
+只有当`i % 2 == 0`成立的时候，`print()`才会执行。与此相对的`i = i + 1`是总是执行的。此处的`==`有别于`=`（赋值），是真正的等于号的意思，这种运算符叫做比较运算符，在循环和判断时都经常用到，其他的还有：
+
+| 比较运算符 | 含义     |
+| ---------- | -------- |
+| `==`       | 等于     |
+| `!=`       | 不等于   |
+| `<`        | 小于     |
+| `>`        | 大于     |
+| `<=`       | 小于等于 |
+| `>=`       | 大于等于 |
+
+那么当我们偶数和奇数都想输出的时候，应该怎么做呢，运行两遍`if`语句吗？这样的确可以达到目的，但是多此一举，因为并不存在偶数和奇数以外的整数，也就是不满足上面的条件的数，自然都是奇数了。这种情况，可以使用`if`和`else`语句来方便的完成目的。执行的时候，先对`if`语句的条件进行判断，满足的话执行`if`语句后面的语句，不满足的话执行`else`语句后面的语句。
+
+```python
+i = 0
+while(i <= 100):
+    if i % 2 == 0:
+        print(i,"is even")
+    else:
+        print(i,"is odd")
+    i = i + 1
+```
+
+如果用上面的代码判断整数以外的数，得到的结果还正确吗。显然不正确，因为包含小数的数，如1.5，都会被判断为奇数。此时可以引入`if-elif-else`结构，`elif`的意思为else if，即`if`的条件不成立的情况下，再进行一次判断，如果不成立，则跳转至最后的`else`。
+
+```python
+i = 0.0
+while(i <= 10):
+    if i % 2 == 0:
+        print(round(i),"is even")
+    elif i % 2 == 1:
+        print(round(i),"is odd")
+    else:
+        print(i,"is float")
+    i = round(i + 0.1,1)
+```
+
+此处有时使用了`round()`函数，这是为什么呢。
+
+# やってみよう
+
+ 闰年的计算一直很麻烦，其遵循着以下的规则[^1]：
+
+1. 公元年分除以4不可整除，为平年。
+
+2. 公元年分除以4可整除但除以100不可整除，为闰年。
+
+3. 公元年分除以100可整除但除以400不可整除，为平年。
+
+4. 公元年分除以400可整除，为闰年。  
+
+看上去非常复杂，稍微整理一下:
+
+判断是否能被4整除，如果不可，输出平年；如果可，进行下一步
+
+判断是否能被100整除，如果不可，输出闰年；如果可，进行下一步
+
+判断是否能被400整除，如果不可，输出平年；如果可，输出闰年
+
+```flow
+st=>start: Input y
+e1=>end: Normal year
+e2=>end: Leap year
+cond1=>condition: y % 4 = 0?
+cond2=>condition: y % 100 = 0? 
+cond3=>condition: y % 400 = 0?
+
+st->cond1
+cond1(yes)->cond2
+cond1(no)->e1
+cond2(yes)->cond3
+cond2(no)->e2
+cond3(yes)->e2
+cond3(no)->e1
+```
+
+可以发现需要使用三个条件语句。`input()`函数用于在程序中输入一个值。`y = input("Input year: ")`可以在打印出Input year: 的提示语后，输入一个值并赋给`y`。
+
+```python
+y = 0
+while( True ):
+    y = input("Input year: ")
+    if y == "quit": break
+    y = int(y)
+    if y % 4 != 0:
+        print(y,"is a normal year")
+    elif y % 100 != 0:
+        print(y,"is a leap year")
+    elif y % 400 != 0:
+        print(y,"is a normal year")
+    else:
+        print(y,"is a leap year")
+```
+
+
+[^1]: https://zh.wikipedia.org/wiki/%E9%97%B0%E5%B9%B4
+

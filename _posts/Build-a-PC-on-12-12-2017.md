@@ -1,0 +1,42 @@
+---
+title: Build a PC on 12.12 (2017)
+date: 2017-12-11 09:04:00
+tags:
+---
+
+# if have 5000 then 
+
+* Monitor [Dell P2414H](https://item.jd.com/935350.html) ￥1099
+* CPU + Motherboard [AMD Ryzen 5 1400 + MSI B350M MORTAR](https://item.jd.com/4829972.html) ￥1470
+* Graphics Card [GIGABYTE GTX 1050 OC](https://item.jd.com/4055764.html) ￥869
+* Memory [G.Skill Ripjaws 4 DDR4 2400](https://item.jd.com/1773544.html) ￥699
+* SSD [Samsung PM961](https://item.taobao.com/item.htm?spm=a1z10.3-c-s.w4002-15851453132.9.29e222241rRy4Z&id=525073557931) ￥649
+> Please note that **PM961** is only available at taobao.
+* Power Supply [SUPER FLOWER sf-450p](https://item.jd.com/821366.html) ￥339
+* Chassis [Tt F1 M-ATX](https://item.jd.com/4607987.html) ￥169
+
+## Total
+
+$$
+1099 + 1470 + 869 + 699 + 649 + 339 + 169 = 5294
+$$
+Consider buying CPU and motherboard separately on 12.12 to save $1470 - 1398 = 72$
+
+# if have 4000 then 
+
+* Monitor [Dell P2414H](https://item.jd.com/935350.html) ￥1099
+* CPU [Intel Pentium G4600](https://item.taobao.com/item.htm?spm=a230r.1.14.20.56944a21lJTGH9&id=528322078486&ns=1&abbucket=15#detail) ￥379
+> Considering this product will cost ￥649 in JD, please buy it at taobao
+* Motherboard [MSI B250M MORTAR](https://item.jd.com/3775065.html) ￥579
+* ~~Graphics Card~~ [~~GIGABYTE GTX 1050 OC~~](https://item.jd.com/4055764.html) ~~￥869~~
+* Memory [G.Skill Ripjaws 4 DDR4 2400](https://item.jd.com/1773544.html) ￥699
+* SSD [Samsung PM961](https://item.taobao.com/item.htm?spm=a1z10.3-c-s.w4002-15851453132.9.29e222241rRy4Z&id=525073557931) ￥649
+> Please note that **PM961** is only available on taobao.
+* Power Supply [SUPER FLOWER sf-450p](https://item.jd.com/821366.html) ￥339
+* Chassis [Tt F1 M-ATX](https://item.jd.com/4607987.html) ￥169
+
+## Total
+
+$$
+1099 + 379 + 579 + 699 + 649 + 339 + 169 = 3913
+$$

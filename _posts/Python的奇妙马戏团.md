@@ -1,0 +1,69 @@
+---
+title: Python的奇妙马戏团
+date: 2020-01-09 22:45:07
+tags: Python
+---
+
+# Foreword
+对于非计算机专业的人类来说，有时候学习一门编程语言也是非常有趣，并具有挑战性的一件事情。但由于现在的热度，很多人想跳过C，直接学习Python，这就是更加有趣的一件事情了。这篇文章，由本身也是非计算机专业的人的视角出发，为自学Python的道路提供一些参考。不需要在意，在意了反而会比较困惑的话，会划上~~删除线~~。
+
+# 关于Python
+Python诞生于1990年 ，虽然足够古老，但是比C还是晚出生了18年。相比于C，Python可以说是简洁、友好而又丰富的一门语言。对于自学，相对是比较适合的一门语言。
+根据[TIOBE的统计](https://www.tiobe.com/tiobe-index/)，目前最受欢迎的语言中，前三名分别是Java、C和Python。但应当注意的是，语言本身是一个工具，掌握一门语言后，学习其他的语言也会变得容易，不必限制自己所想涉及的范围。
+
+![TIOBE Index of Jan, 2020](https://dppkgq.bn.files.1drv.com/y4mEnnzwEEQbLBGhyJvbVg8BQ0sutnUA4c3I5RBFLqQavc98OAIFKpzhNPaK-1hftCno_NPibjkYPbpL2RdWpKXDUKzLPZ35Q3jlwpRgM_Nq6ZtHGzR91fvOA6UdUrn6e-YmQwq9st8QauOtjqm2ePIjktyhEOTRU4W8M50K8-mpfNE_KIEDrKnm1mErmxHZ3gtgE9WPony6gft1J_W21tW9A?width=1407&height=694&cropmode=none) 
+
+# 如何开始使用Python
+
+Python 2更新到Python 3的时候，语法发生了比较大的变化，导致以前用Python 2写的代码，在Python 3的环境下可能不能正常运行。因此，现在只学习Python 3即可，在网上查找资料时，也应当注意对应的Python版本。
+
+要在电脑上运行Python的代码，必须要安装Python~~的解释器，即CPython。这是由C语言实现的一个解释器，并且由Python软件基金会维护~~。下载地址为 https://www.python.org/downloads/ 。选择对应自己电脑操作系统的最新版本的64位安装包进行安装。例如，一台较新的MacBook Air应该用这样的顺序来找到适合自己的版本：
+
+![Step 1](https://dppjgq.bn.files.1drv.com/y4mm6T5mQLR7Cr2mBV6tuDJh5UZGxuSWSxUDwQ2Ug6uie7OV4TnyzBj62wKUXZEw7xDLd4ERsgMnF8OPAhwgBbzdda71018gYSkrgiTDsqhh4lAShohydtv9k_UjAA_UbYkCC5aZ-wlpEUHx19I07q7BBhzs8xSuG2MWqkenQn0q8cIqr8d_b9qspRt00DS4wV81sfPRLjNgIAza9SBkekLGw?width=843&height=402&cropmode=none)
+
+![Step 2](https://dppigq.bn.files.1drv.com/y4m86fbTstGyPXf_-C3Dl2fOpuQyksWkPOt3RE7CKYde9V1TumiN3PguMjfiy6O_-Bv_m1N23pPNqGmHTqU1e8DT8kPpiiYXoPS-Z_N5EXjDSAKP70Lr68C7hFIusQ6kQLtiIIvHerCo_xSUMONI_pDzp-S842OjwbE-gMMpnKHC4rWKV5fZwqmhk00ip0EEJSYozQkX6j_AIOWrprNU8o7sw?width=1378&height=896&cropmode=none)
+
+安装完成后，就可以验证安装是否成功。首先打开自己电脑的终端（Terminal）。不同的操作系统自带的终端也是不同的。
+
+- Windows中自带的终端为cmd和PowerShell，你可以在运行窗口中输入`cmd`或者`powershell`来打开它们。
+
+  <img src="https://dpphgq.bn.files.1drv.com/y4m6HEmcyKc-pAVisX9gseROVUSkqiDNwmvCoq0K2xUmXIahOhQKna8xWvZ8KpP96lT-YSwhVLfmcQshyZmvnl1FPKyFIpGDJq4TrPv-zUPiMyBeNhsDBkxC89HAtJX88AE5riU8Tt5x_7yiTTDeMo90YvUuASPbM2hCxy3SKR_SIGcjHhh4TmkvoOGc6ufj8HCkaBmRAaq5CmKSUu3k9oIyg?width=570&amp;height=337&amp;cropmode=none" alt="window of cmd"  />
+
+- Linux和macOS默认使用的是bash。如果你使用的是Linux，那你肯定知道怎么打开它。如果是macOS，你可以在Launchpad中的“其他”文件夹中找到它<img src="https://dppggq.bn.files.1drv.com/y4moFFQs1rCMoptBntk6hmLzrMFTgWOMSQzeE4XsDe17Y9Ib54JaeNbbbZ2FoARw8aawmxqxiVqk9-OVxW8Nr9kIJ3rwT1qaYe998nAOgn42Arzz1LNg2XhaMV0LH_2-iITbpWjlS8W7Lo35EgYKsw54a8C_mY_Xo6xr_XWIpOjuXosrwUNHPezW5nio4aepk7nj1YL41sv86QgfpDjPuQ0QQ?width=200&amp;height=200&amp;cropmode=none" alt="icon of terminal in macos" style="zoom:20%;" />。
+
+在终端中输入`python -V` 后（注意V为大写），Python会返回所安装Python的版本。例如
+
+```
+Microsoft Windows [Version 10.0.18363.535]
+(c) 2019 Microsoft Corporation. All rights reserved.
+
+C:\Users\nicho>python -V
+Python 3.7.3
+```
+
+这就代表了Python已经安装成功了。
+
+# 附注
+
+对于macOS，系统会系带Python 2。在这个情况下，在终端输入`python`可能会打开Python 2。因此，也有必要了解一下在电脑中同时安装有Python 2和Python 3时的使用方法。
+
+幸运的是，这个问题有比较方便的对策。在Windows中，环境变量记载着这些信息，可以通过调整环境变量Path中各项的顺序来改变输入`python`或者`pip`响应的版本。位于上面的项目会取得更高的优先级。
+
+![Path setting on Windows 10](https://eopkgq.bn.files.1drv.com/y4moZD4io3_LyQZ36RLwSh93Q5PyCFTHcCWO5TCInLRo8MX-w_HtxgADPESJTxGDGtEhwCm29jiwvr3P8-HqMinlk953fPMQb5Eno7YvDvxVtDXvtJBZdN9SStHLG-v-7A24Xb0cwYQJMASmiLJhtoA_1ZRrfmW732M6p5OucO2AFusHVun71-AbeZJGfY0EqhxSiI2EGyjC3W4PuzsuZiGUA?width=2678&height=1119&cropmode=none)
+
+当然，每次想调用不同的版本的时候都去改变一次环境变量是不现实的。因此，改变所使用的命令是更实用的方法：
+
+```
+C:\Users\nicho>py -2 -V
+Python 2.7.17
+
+C:\Users\nicho>pip2 -V
+pip 19.2.3 from c:\python27\lib\site-packages\pip (python 2.7)
+
+C:\Users\nicho>py -3 -V
+Python 3.7.3
+
+C:\Users\nicho>pip3 -V
+pip 19.3.1 from c:\users\nicho\appdata\local\programs\python\python37\lib\site-packages\pip (python 3.7)
+```
+
