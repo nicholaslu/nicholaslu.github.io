@@ -1,7 +1,8 @@
 ---
+layout: post
 title: Python的奇妙马戏团-其四
 date: 2020-02-24 15:17:00
-tags: Python
+categories: Python
 mathjax: true
 ---
 

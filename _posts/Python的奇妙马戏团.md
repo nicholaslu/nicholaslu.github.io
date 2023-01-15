@@ -1,7 +1,8 @@
 ---
+layout: post
 title: Python的奇妙马戏团
 date: 2020-01-09 22:45:07
-tags: Python
+categories: Python
 ---
 
 # Foreword

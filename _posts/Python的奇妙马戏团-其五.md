@@ -1,7 +1,8 @@
 ---
+layout: post
 title: Python的奇妙马戏团-其五
 date: 2020-02-24 23:57:45
-tags: Python
+categories: Python
 ---
 
 # 斐波那契数列

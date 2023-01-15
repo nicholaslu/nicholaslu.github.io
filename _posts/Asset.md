@@ -1,7 +1,8 @@
 ---
+layout: post
 title: Asset
 date: 2017-10-23 13:02:55
-tags:
+categories:
 ---
 
 # 'Asset'是什么

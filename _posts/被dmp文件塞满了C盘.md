@@ -1,7 +1,8 @@
 ---
+layout: post
 title: 被dmp文件塞满了C盘
 date: 2018-01-29 01:46:55
-tags:
+categories:
 ---
 SSD的空间因为只有256GB，因此需要对它定期进行清理。好在Win10现在的卸载程序页面已经足够好用，可以按照大小和位置（例如C:）进行检索。但是这次，排在第一的出乎意料的并不是Adobe家族的成员，而是一个Microsoft Store上的app：Tile Genie，其空间占据了17.4GB。
 

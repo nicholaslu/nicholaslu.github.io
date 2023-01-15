@@ -1,6 +1,6 @@
 title: Minolta镜头购置计划
 author: Nicholas Lu
-tags: []
+categories: []
 categories: []
 date: 2018-03-10 23:49:00
 ---

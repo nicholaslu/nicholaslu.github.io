@@ -1,7 +1,8 @@
 ---
+layout: post
 title: Build a PC on 12.12 (2017)
 date: 2017-12-11 09:04:00
-tags:
+categories:
 ---
 
 # if have 5000 then 

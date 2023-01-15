@@ -1,7 +1,8 @@
 ---
+layout: post
 title: Python的奇妙马戏团 其二
 date: 2020-01-10 01:15:59
-tags: Python
+categories: Python
 ---
 
 # 向世界问好
