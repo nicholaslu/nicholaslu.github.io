@@ -2,7 +2,7 @@
 layout: post
 title: "Balance sheet"
 date: 2017-10-23 12:39:08 +0800
-categories:
+tags:
 ---
 # 背景
 **Balance sheet**又可称之为**Statement of Financial Position**，它是一种财务报表。中文称之为**资产负债表**或者**财务状况表**。它是企业常用的几种财务报表之一。
